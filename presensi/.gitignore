@@ -1,0 +1,5 @@
+dataset/
+encodings/
+attendance/
+__pycache__/
+*.pyc
