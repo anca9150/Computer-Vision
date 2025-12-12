@@ -1,8 +1,8 @@
 import tkinter as tk
 from tkinter import ttk
 from tkinter import messagebox
-from gui.menu_mahasiswa import FormMahasiswa
-from gui.menu_capture import CaptureWajah
+from gui.mahasiswa_form import FormMahasiswa
+from gui.capture_window import CaptureWindow
 
 
 class MainWindow(tk.Tk):
@@ -10,7 +10,7 @@ class MainWindow(tk.Tk):
         super().__init__()
 
         # Judul aplikasi
-        self.title("Aplikasi Presensi Computer Vision - UAS")
+        self.title("Aplikasi Presensi Computer Vision")
         self.geometry("600x400")
         self.resizable(False, False)
 
@@ -51,7 +51,7 @@ class MainWindow(tk.Tk):
         FormMahasiswa(self)
 
     def menu_capture(self):
-        CaptureWajah(self)
+        CaptureWindow(self)
 
     def menu_train(self):
         messagebox.showinfo("Info", "Menu training wajah belum dibuat.")
