@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter import messagebox
 from gui.menu_mahasiswa import FormMahasiswa
+from gui.menu_capture import CaptureWajah
 
 
 class MainWindow(tk.Tk):
@@ -46,11 +47,11 @@ class MainWindow(tk.Tk):
 
     # Placeholder fungsi menu
 
-    def menu_users(self):
+    def menu_mahasiswa(self):
         FormMahasiswa(self)
 
     def menu_capture(self):
-        messagebox.showinfo("Info", "Menu capture wajah belum dibuat.")
+        CaptureWajah(self)
 
     def menu_train(self):
         messagebox.showinfo("Info", "Menu training wajah belum dibuat.")

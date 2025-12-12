@@ -5,7 +5,7 @@ from config.db_config import get_connection
 def tambah_mahasiswa(nim, nama):
     db = get_connection()
     cursor = db.cursor()
-    sql = "INSERT INTO users (nim, nama), VALUES (%s, %s)"
+    sql = "INSERT INTO users (nim, nama) VALUES (%s, %s)"
     try:
         cursor.execute(sql, (nim, nama))
         db.commit()
