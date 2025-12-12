@@ -3,6 +3,7 @@ from tkinter import ttk
 from tkinter import messagebox
 from gui.mahasiswa_form import FormMahasiswa
 from gui.capture_window import CaptureWindow
+from gui.trining_window import TrainingWindow
 
 
 class MainWindow(tk.Tk):
@@ -54,7 +55,7 @@ class MainWindow(tk.Tk):
         CaptureWindow(self)
 
     def menu_train(self):
-        messagebox.showinfo("Info", "Menu training wajah belum dibuat.")
+        TrainingWindow(self)
 
     def menu_absen(self):
         messagebox.showinfo("Info", "Menu absensi belum dibuat.")
