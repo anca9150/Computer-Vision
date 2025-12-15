@@ -5,6 +5,7 @@ from gui.mahasiswa_form import FormMahasiswa
 from gui.capture_window import CaptureWindow
 from gui.trining_window import TrainingWindow
 from gui.absensi_window import AbsensiWindow
+from gui.rekap_window import RekapWindow
 
 
 class MainWindow(tk.Tk):
@@ -47,6 +48,11 @@ class MainWindow(tk.Tk):
         )
         btn_absen.grid(row=3, column=0, pady=5)
 
+        btn_rekap = ttk.Button(
+            frame, self, text="Rekap Presensi", command=self.menu_rekap
+        )
+        btn_absen.grid(row=4, column=0, pady=5)
+
     # Placeholder fungsi menu
 
     def menu_mahasiswa(self):
@@ -60,3 +66,6 @@ class MainWindow(tk.Tk):
 
     def menu_absen(self):
         AbsensiWindow(self)
+
+    def menu_rekap(self):
+        RekapWindow(self)

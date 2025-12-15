@@ -6,7 +6,7 @@ from database.db import simpan_absensi, cek_users
 TRAIN_FILE = "trainer/trainer.yml"
 LABEL_FILE = "trainer/label_to_nim.npy"
 CASCADE_FILE = "haarcascade/haarcascade_frontalface_default.xml"
-CONFIDENCE_THRESHOLD = 50  # ubah sesuai kebutuhan
+CONFIDENCE_THRESHOLD = 70  # ubah sesuai kebutuhan
 
 
 def mulai_absen():
