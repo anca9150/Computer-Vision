@@ -61,6 +61,7 @@ def get_absensi():
     return data
 
 
+# Rekan presensi
 def get_absensi_by_date(tanggal):
     db = get_connection()
     cursor = db.cursor()
@@ -68,6 +69,17 @@ def get_absensi_by_date(tanggal):
         "SELECT nim, nama, waktu FROM absensi WHERE DATE(waktu) = %s ORDER BY waktu ASC"
     )
     cursor.execute(sql, (tanggal,))
+    data = cursor.fetchall()
+    cursor.close()
+    db.close()
+    return data
+
+
+# Ambil data presensi
+def get_absensi():
+    db = get_connection()
+    cursor = db.cursor()
+    cursor.execute("SELECT nim, nama, waktu FROM absensi ORDER BY waktu DESC")
     data = cursor.fetchall()
     cursor.close()
     db.close()

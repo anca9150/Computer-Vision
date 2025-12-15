@@ -1,7 +1,8 @@
 import tkinter as tk
-from tkinter import ttk
+from tkinter import ttk, messagebox
 from database.db import get_absensi_by_date
 from datetime import date
+from utils.export_excel import export_absensi_excel
 
 
 class RekapWindow(tk.Toplevel):
@@ -15,7 +16,13 @@ class RekapWindow(tk.Toplevel):
         self.entry_tanggal.pack()
         self.entry_tanggal.insert(0, str(date.today()))
 
-        ttk.Button(self, text="Tampilkan", command=self.load_data).pack(pady=10)
+        ttk.Button(self, text="Tampilkan", width=20, command=self.load_data).pack(
+            pady=10
+        )
+
+        ttk.Button(
+            self, text="Export ke Excel", width=20, command=self.export_excel
+        ).pack(pady=10)
 
         self.tree = ttk.Treeview(
             self, columns=("nim", "nama", "waktu"), show="headings"
@@ -34,3 +41,10 @@ class RekapWindow(tk.Toplevel):
 
         for row in data:
             self.tree.insert("", tk.END, values=row)
+
+    def export_excel(self):
+        hasil = export_absensi_excel()
+        if hasil:
+            messagebox.showinfo("Berhasil", f"Data berhasil diexport:\n{hasil}")
+        else:
+            messagebox.showwarning("Kosong", "Data presensi masih kosong.")

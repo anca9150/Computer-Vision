@@ -1,4 +1,5 @@
 dataset/
 trainer/
+exports/
 __pycache__/
 *.pycya

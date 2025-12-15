@@ -49,9 +49,9 @@ class MainWindow(tk.Tk):
         btn_absen.grid(row=3, column=0, pady=5)
 
         btn_rekap = ttk.Button(
-            frame, self, text="Rekap Presensi", command=self.menu_rekap
+            frame, text="Rekap Presensi", width=30, command=self.menu_rekap
         )
-        btn_absen.grid(row=4, column=0, pady=5)
+        btn_rekap.grid(row=4, column=0, pady=5)
 
     # Placeholder fungsi menu
 
